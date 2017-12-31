@@ -1,0 +1,20 @@
+  <div class="table-row row">
+    <span class="col-sm-1">{{coupon.itemIndex + 1 }}</span>
+    <span class="col-sm-2">{{coupon.couponItem.code}}</span>
+    <span class="col-sm-2">{{coupon.couponItem.applicableFor}}</span>
+    <span class="col-sm-2">{{coupon.couponItem.expiryTime | date:'yyyy-MM-dd'}}</span>
+    <span class="col-sm-1">{{coupon.couponItem.value}}</span>
+    <span class="col-sm-1">{{coupon.couponItem.usageCount}}</span>
+    <span class="col-sm-1">
+      <button class="btn btn-primary" type="button" (click)="updateClicked()">Update</button>
+    </span>
+    <span class="col-sm-1">
+      <button class="btn btn-danger" type="button" (click)="deleteClicked()">Delete</button>
+    </span>
+  </div>
+
+
+  <div *ngIf="showUpdate" class="row">
+    <app-coupon-insert-update class="col-sm-6" [coupon]="coupon.couponItem" (saveButtonClicked)="saveClicked($event)" (cancelButtonClicked)="cancelClicked($event)"></app-coupon-insert-update>
+  </div>
+  

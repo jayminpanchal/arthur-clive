@@ -1,0 +1,24 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'User Info'" [icon]="'fa-table'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    All Users
+                </div>
+                <div class="card-block table-responsive">
+                    <div class="table">
+                        <div class=" table-caption row">   
+                                <span class="col-sm-2">#</span>
+                                <span class="col-sm-3">Full Name</span>
+                                <span class="col-sm-2">Phone Number</span>
+                                <span class="col-sm-3">Email</span>
+                                <span class="col-sm-2">View</span>
+                               </div>
+                        <div *ngFor="let user of userInfo; let i=index" [app-user]="{'userInfo': user, 'itemIndex': i}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

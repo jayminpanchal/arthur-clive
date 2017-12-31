@@ -1,0 +1,154 @@
+@import 'mixin';
+
+.reviewSection{
+	position: relative;
+	float: left;
+	// border: 1px solid #000;
+	// width: 80.7%;
+	width: 100%;
+	padding: 10px 0 0 0;
+
+	@include MQ(767) {
+		padding: 15px 0 0 0;
+
+		// margin: 15px 0 0 0;
+		// padding: 10px;
+		// background: rgba(#cecece, 0.2);
+	}
+
+	.reviewBtn{
+		position: relative;
+		float: left;
+		margin-left: 50%;
+		margin-bottom: 5px;
+	    max-width: 150px;
+        width: 100%;
+        border: 0;
+        outline: 0;
+        text-align: center;
+        @include font-size(12px);
+        font-family: 'Roboto';
+        color: #fff;
+        text-transform: uppercase;
+        display: block;
+        background: black;
+        padding: 7px 5px;
+
+        @include MQ(862) {
+        	width: 50%;
+        	float: right;
+        	margin-left: auto;
+        }
+        @include MQ(767) {
+			width: 100%;
+			max-width: 100%;
+        }	
+
+        span{
+        	font-size: 14px;
+        	font-size: 0.875rem;
+        	margin-left: 5px;
+        	color: #fc7700;
+        }
+	}
+	.reviewStar{
+		float: left;
+		margin-left: 50%;
+		padding: 5px 0;
+
+		@include MQ(862) {
+			width: 50%;
+			float: right;
+			margin-left: 50%;
+		}
+		@include MQ(767) {
+			width: 100%;
+			margin-left: 0;
+			text-align: center !important;
+		}
+	}
+	textarea{
+		// width: 80.7%;
+		width: calc(50% + 150px);
+		float: left;
+		margin-top: 5px;
+		resize: vertical;
+		min-height: 75px;
+		height: 75px;
+		@include font-size(14px);
+		font-family: 'Roboto';
+		color: #2a2c2e;
+		outline: none;
+		padding: 5px;
+		border: 1px solid #cecece;
+
+		@include MQ(862) {
+			width: 100%;
+		}
+	}
+	span.error{
+		@include font-size(12px);
+		text-align: right;
+		float: left;
+		width: calc(50% + 150px);
+		display: block;
+		padding: 3px 0;
+		color: #f00;
+
+		@include MQ(862) {
+			width: 100%;
+		}
+		@include MQ(767) {
+			text-align: center;
+		}
+	}
+	.reviewBtnWrap{
+		position: relative;
+		max-width: 150px;
+		width: 100%;
+		float: left;
+		margin-left: 50%;
+		padding: 10px 0 0 0;
+
+		@include MQ(862) {
+			margin-left: 0;
+			float: right;
+		}
+		@include MQ(767) {
+			max-width: 200px;
+			right: 50%;
+			margin-right: -100px;
+		}
+
+		button[type="submit"]{
+			width: 48%;
+			float: left;
+
+			border: 0;
+			outline: 0;
+			text-align: center;
+			@include font-size(12px);
+			font-family: 'Roboto';
+			color: #fff;
+			text-transform: uppercase;
+			display: block;
+			background: black;
+			padding: 7px 0 5px;
+		}
+		button[type="button"]{
+			width: 48%;
+			float: right;
+
+			border: 0;
+			outline: 0;
+			text-align: center;
+			@include font-size(12px);
+			font-family: 'Roboto';
+			color: #fff;
+			text-transform: uppercase;
+			display: block;
+			background: black;
+			padding: 7px 0 5px;
+		}
+	}
+}

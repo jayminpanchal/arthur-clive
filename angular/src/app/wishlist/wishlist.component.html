@@ -1,0 +1,20 @@
+<div class="commonPageWrap">
+    <div class="wrapper">
+        <div class="wrapInner">
+            <h1 class="titleCommon">WishList</h1>
+            <div class="shoppingBgcommon">
+                <div *ngIf="wishListService?.wishListItems?.listOfProducts.length > 0" class="shoppingBagWrapper clearfix">
+                    <div class="shoppingBagWrapperInnerLeft wishlistWrap">
+                        <listitem *ngFor="let wishItem of wishListService?.wishListItems?.listOfProducts; let i = index" [itemIndex]="i" [item]="wishItem"></listitem>
+                    </div>
+                </div>
+                <div *ngIf="wishListService?.wishListItems?.listOfProducts.length == 0" class="emptyShoppingBagWishlistWrap">
+                    <div class="emptyShoppingBagWishlist">
+                        <p>Your wish list is empty.</p>
+                        <p><button (click)="continueShopping()">Start Shopping</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

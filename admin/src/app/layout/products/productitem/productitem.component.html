@@ -1,0 +1,20 @@
+
+  <div class="table-row row">
+    <span class="col-sm-1">{{product?.itemIndex + 1 }}</span>
+    <span class="col-sm-2">{{product.productItem?.productFor}}</span>
+    <span class="col-sm-2">{{product.productItem?.productType}}</span>
+    <span class="col-sm-2">{{product.productItem?.productDesign}}</span>
+    <span class="col-sm-2">{{product.productItem?.productSize || "NA"}}</span>
+    <span class="col-sm-1">
+      <button class="btn btn-primary " type="button" (click)="updateClicked()">Update</button>
+    </span>
+    <span class="col-sm-2">
+      <button class="btn btn-danger" type="button" (click)="deleteClicked()">Delete</button>
+    </span>
+  </div>
+
+
+  <div *ngIf="showUpdate" class="row">
+    <app-product-insert-update class="col-sm-6" [product]="product" (saveButtonClicked)="saveClicked($event)" (cancelButtonClicked)="cancelClicked($event)"></app-product-insert-update>
+  </div>
+  

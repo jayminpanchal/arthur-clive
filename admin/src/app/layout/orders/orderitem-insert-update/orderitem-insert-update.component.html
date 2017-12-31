@@ -1,0 +1,163 @@
+<div class="orderDetailsWrapOuter">
+  <div class="row">
+    <span class="col-sm-6">
+      <p>Order Status: {{order.orderItem.orderStatus}}</p>
+      <strong>
+        <div>
+          <select class="form-control" [(ngModel)]="order.orderItem.orderStatus">
+            <option *ngFor="let status of orderStatus" [attr.value]="status.name" [ngValue]="status">{{status.name}}</option>
+          </select>
+        </div>
+      </strong>
+      <br/>      
+      <button class="btn btn-primary" type="button" (click)="saveClicked()">Save</button>
+      <button class="btn btn-danger" type="button" (click)="cancelClicked()">Cancel</button>
+    </span>
+    
+    <span class="col-sm-6 text-right">
+      <button class="printThisPageBtn" (click)="printContent()">Print
+        <span class="fa fa-print"></span>
+      </button>
+    </span>
+  </div>
+  <br/>
+  <div class="orderDetailsWrap">
+    <div class="orderDetailsAddressWrap clearfix">
+     <div class="row">
+      <div class="InvoiceTab col-sm-4 text-left">
+        <h2>Invoice Details</h2>
+        <p>Invoice Number :
+          <strong>{{order.orderItem?.orderId}}</strong>
+        </p>
+        <p>Order Number :
+          <strong>ACODR-{{order.orderItem?.orderId}}</strong>
+        </p>
+        <p>Order Date :
+          <strong>{{order.orderItem.id?.creationTime.substring(8,10) + '-' + order.orderItem.id?.creationTime.substring(5,7) + '-'
+            + order.orderItem.id?.creationTime.substring(0,4) }}</strong>
+        </p>
+        <p>Payment Method :
+          <strong>{{orderItem?.paymentMethod}}</strong>
+        </p>
+        <p>Shipping :
+          <strong>Free</strong>
+        </p>
+      </div>
+
+      <div class="odrDtlsBillingAddress col-sm-4">
+        <h2>Billing Address</h2>
+        <div>
+          {{billingAddress?.addressLines}}
+          <br> {{billingAddress?.city}}
+          <br> {{billingAddress?.state}}
+          <br> {{billingAddress?.pinCode}}
+          <br> {{billingAddress?.country}}
+        </div>
+      </div>
+
+      <div class="odrDtlsDeliveryAddress col-sm-4">
+        <h2>Delivery Address</h2>
+        <div>
+          {{shippingAddress?.addressLines}}
+          <br> {{shippingAddress?.city}}
+          <br> {{shippingAddress?.state}}
+          <br> {{shippingAddress?.pinCode}}
+          <br> {{shippingAddress?.country}}
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="itemDescriptionOuter">
+      <div class="itemDescWrapMain clearfix" *ngFor="let product of order.orderItem.productDetails">
+        <div class="itemImageNameDetailsLeft clearfix">
+          <div class="itemImageWrap">
+            <img src="{{product.productInCart.minioObject_URL}}" alt="">
+          </div>
+          <div class="itemDescriptionWrap clearfix">
+            <h3>Product Description</h3>
+            <p>{{product?.productInCart.productFor}}</p>
+            <p>Colour : {{product?.productInCart.productColour}}</p>
+            <p>Size : {{product?.productInCart.productSize }}</p>
+          </div>
+        </div>
+        <div class="itemPriceDetailsRight">
+          <div class="itemQTY">
+            <h3>Qty</h3>
+            <p>{{product?.productInCart.productQuantity}}</p>
+          </div>
+          <div class="itemUnitPice">
+            <h3>Unit Price</h3>
+            <i class="fa fa-inr"></i>
+            <span class="unitPrice">{{product?.productInCart.productPrice}}</span>
+          </div>
+          <div class="itemTotal">
+            <h3>Item Total</h3>
+            <i class="fa fa-inr"></i>
+            <span class="unitPrice">{{product?.productInCart.productPrice * product?.productInCart.productQuantity}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="orderSummeryOuter clearfix">
+      <div class="orderSummeryWrap">
+        <h4>Order Summary</h4>
+        <table class="orderSummery" cellpadding="0" cellspacing="0">
+          <tr>
+            <td>Item(s) Subtotal</td>
+            <td>
+              <i class="fa fa-inr"></i>
+              <span class="unitPrice">{{order.orderItem?.totalAmount - order.orderItem?.estimatedTax}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Shipping</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>
+              <i class="fa fa-inr"></i>
+              <span class="unitPrice">{{order.orderItem?.totalAmount - order.orderItem?.estimatedTax}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>GST@5%</td>
+            <td>
+              <i class="fa fa-inr"></i>
+              <span class="unitPrice">{{order.orderItem?.estimatedTax}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Discount Applied</td>
+            <td>
+              <i class="fa fa-inr"></i>
+              <span class="unitPrice">{{order.orderItem?.couponDiscount}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Grand Total</td>
+            <td>
+              <i class="fa fa-inr"></i>
+              <span class="unitPrice">{{order.orderItem?.totalAmount}}</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="orderDetailsRegisterAddress">
+      <p>
+        <strong>Registered Address:</strong> Arthur Clive . 2nd Floor . 2/54 Azadgarh . Kolkata . PIN 700040 . India</p>
+      <p>
+        <span>
+          <strong>Call:</strong>
+          <a href="tel:09433978080" class="telePhoneNumber">+91 9433978080</a>
+        </span>
+        <span>
+          <strong>Email:</strong>
+          <a href="mailto:sales@artwear.in" target="_parent">sales@artwear.in</a>
+        </span>
+      </p>
+
+    </div>
+  </div>
+</div>

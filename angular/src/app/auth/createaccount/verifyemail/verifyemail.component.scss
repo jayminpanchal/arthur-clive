@@ -1,0 +1,97 @@
+.registrationSuccessWrap {
+  position: relative;
+  padding: 50px 20px;
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.26);
+          box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.26);
+  text-align: center;
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: #2a2c2e;
+}
+
+@media (max-width: 47.9375em) {
+  .registrationSuccessWrap {
+    padding: 30px 20px;
+  }
+}
+
+.registrationSuccessWrap p {
+  color: #fc7700;
+  padding-bottom: 20px;
+}
+
+.registrationSuccessWrap .registrationSUccessPage {
+  position: relative;
+  text-align: center;
+  margin: 40px 0 0 0;
+}
+
+@media (max-width: 47.9375em) {
+  .registrationSuccessWrap .registrationSUccessPage {
+    margin: 20px 0 0 0;
+  }
+}
+
+.registrationSuccessWrap .registrationSUccessPage ul li {
+  display: inline-block;
+}
+
+@media (max-width: 47.9375em) {
+  .registrationSuccessWrap .registrationSUccessPage ul li {
+    display: block;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .registrationSuccessWrap .registrationSUccessPage ul li:last-of-type {
+    padding-bottom: 0;
+  }
+}
+
+.registrationSuccessWrap .registrationSUccessPage ul li a {
+  position: relative;
+  padding: 10px 15px;
+  margin: 0 15px 0 0;
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-family: 'Roboto';
+  color: #fff;
+  text-transform: uppercase;
+  display: block;
+  text-decoration: none;
+  background: black;
+  padding: 6px 15px;
+  -webkit-box-shadow: inset 0 0 0 0 #fc7700;
+          box-shadow: inset 0 0 0 0 #fc7700;
+  -webkit-transition: all ease 0.8s;
+  transition: all ease 0.8s;
+}
+
+@media (max-width: 47.9375em) {
+  .registrationSuccessWrap .registrationSUccessPage ul li a {
+    width: 175px;
+    margin: 0 auto 0;
+  }
+}
+
+.registrationSuccessWrap .registrationSUccessPage ul li a:last-of-type {
+  margin: 0 0 0 0;
+}
+
+@media (max-width: 47.9375em) {
+  .registrationSuccessWrap .registrationSUccessPage ul li a:last-of-type {
+    margin: 0 auto 0;
+  }
+}
+
+.registrationSuccessWrap .registrationSUccessPage ul li a:hover {
+  -webkit-box-shadow: inset 0 312px 0 0 #fc7700;
+          box-shadow: inset 0 312px 0 0 #fc7700;
+  color: #fff;
+}
+
+.registrationSuccessWrap .registrationSUccessPage ul li a i {
+  font-size: 18px;
+  font-size: 1.125rem;
+  margin-left: 10px;
+}

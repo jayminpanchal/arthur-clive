@@ -1,0 +1,26 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Orders'" [icon]="'fa-table'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    All Orders
+                </div>
+                <div class="card-block table-responsive">
+                    <div class="table">   
+                        <div class="table-caption row">
+                                <span class="col-sm-1">#</span>
+                                <span class="col-sm-2">Order ID</span>
+                                <span class="col-sm-2">User Name</span>
+                                <span class="col-sm-2">Total Amount</span>
+                                <span class="col-sm-2">Payment Status</span>
+                                <span class="col-sm-2">Order Status</span>
+                                <span class="col-sm-1">View</span>
+                            </div>
+                        <div *ngFor="let order of orders; let i=index" [app-orderitem]="{'orderItem': order, 'itemIndex': i}">
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

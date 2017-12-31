@@ -1,0 +1,33 @@
+<div class="shoppingOrderWrap">
+    <h2 class="shoppingOrderHeading">Your Order</h2>
+    <table class="orderTable">
+        <tr>
+            <td>Bag Total</td>
+            <td><i class="fa fa-inr"></i>{{cartTotal}}</td>
+        </tr>
+        <tr>
+            <td>Bag Discount</td>
+            <td class="discountAmount"><i class="fa fa-inr"></i> 0</td>
+        </tr>
+        <tr>
+            <td>Estimated Tax</td>
+            <td><i class="fa fa-inr"></i>{{estimatedTax}}</td>
+        </tr>
+        <tr>
+            <td>Coupon Discount</td>
+            <td class="discountAmount"><i class="fa fa-inr" *ngIf="!couponDiscount.percentage"></i>
+            <i class="fa fa-percent" *ngIf="couponDiscount.percentage"></i>
+            <span>{{couponDiscount.value}}</span>
+                <!-- <a href="" class="applyCoupon">Apply Coupon</a> --></td>
+        </tr>
+        <tr>
+            <td>Delivery Charges</td>
+            <td *ngIf="deliveryCharges == 0">Free</td>
+            <td *ngIf="deliveryCharges != 0"><i class="fa fa-inr"></i>{{deliveryCharges}}</td>
+        </tr>
+        <tr>
+            <td>Order Total</td>
+            <td><i class="fa fa-inr"></i>{{finalAmount}}</td>
+        </tr>
+    </table>
+</div>

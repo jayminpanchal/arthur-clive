@@ -1,0 +1,42 @@
+@import 'mixin';
+
+.giftProductBorder{
+	border:1px solid #cecece;
+	text-align: center;
+}
+
+.voucherFormWrap{
+	position: relative;
+	padding: 20px 5px 0;
+
+	@include MQ(767) {
+		padding: 20px 0;
+	}
+
+	.fieldsWrap{
+		position: relative;
+		padding-bottom: 15px;
+
+		input[type="email"], input[type="text"]{
+			width: 100%;
+			padding: 10px 10px;
+			font-family: 'Roboto';
+			font-weight: 300;
+			@include font-size(14px);
+			border: 1px solid #c1c1c1;
+			outline: none;
+		}
+		textarea{
+			width: 100% !important;
+			padding: 10px 10px;
+			min-height: 80px;
+			height: 80px;
+			font-family: 'Roboto';
+			font-weight: 300;
+			@include font-size(16px);
+			border: 1px solid #c1c1c1;
+			outline: none;
+
+		}
+	}
+}

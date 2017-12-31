@@ -1,0 +1,316 @@
+<div class="commonPageWrap">
+  <div class="wrapper">
+    <div class="wrapInner">
+
+      <!-- Start HTML Here -->
+
+      <h1 class="titleCommon">ORDER DETAILS</h1>
+
+      <div class="orderDetailsWrapOuter">
+        <button class="printThisPageBtn" (click)="printContent()">Print <span class="fa fa-print"></span></button>
+        <div class="orderDetailsWrap">
+          <div class="logoGSTNumberWrap">
+            <div class="oderDetailsLogo"><img src="assets/img/order-logo.png" alt=""></div>
+            <div class="GSTNumber">GST : 19ABGFA7624P1ZU</div>
+          </div>
+          <div class="orderDetailsAddressWrap clearfix">
+            <div class="InvoiceTab">
+              <h2>Invoice Details</h2>
+              <p>Invoice Number : <strong>{{orderItem?.orderId}}</strong></p>
+              <p>Order Number : <strong>ACODR-{{orderItem?.orderId}}</strong></p>
+              <p>Order Date : <strong>{{orderItem.id?.creationTime.substring(8,10) + '-' + orderItem.id?.creationTime.substring(5,7) + '-' + orderItem.id?.creationTime.substring(0,4) }}</strong></p>
+              <p>Payment Method : <strong>{{orderItem?.paymentMethod}}</strong></p>
+              <p>Shipping : <strong>Free</strong></p>
+            </div>
+            <div class="odrDtlsBillingAddress">
+              <h2>Billing Address</h2>
+              <div>
+                {{billingAddress?.addressLines}}<br> {{billingAddress?.city}}
+                <br> {{billingAddress?.state}}
+                <br> {{billingAddress?.pinCode}}
+                <br> {{billingAddress?.country}}
+              </div>
+            </div>
+            <div class="odrDtlsDeliveryAddress">
+              <h2>Delivery Address</h2>
+              <div>
+                {{shippingAddress?.addressLines}}<br> {{shippingAddress?.city}}
+                <br> {{shippingAddress?.state}}
+                <br> {{shippingAddress?.pinCode}}
+                <br> {{shippingAddress?.country}}
+              </div>
+            </div>
+          </div>
+          <div class="itemDescriptionOuter">
+            <div class="itemDescWrapMain clearfix" *ngFor="let product of orderItem.productDetails">
+              <div class="itemImageNameDetailsLeft clearfix">
+                <div class="itemImageWrap">
+                  <img [lazyLoad]="product.productInCart.minioObject_URL" alt="">
+                </div>
+                <div class="itemDescriptionWrap clearfix" *ngIf="product.productInCart.productType != 'Gifts'">
+                  <h3>Product Description</h3>
+                  <p>{{product.productInCart.productFor +' '+ product.productInCart.productType + ' ' + product.productInCart.productDesign}}</p>
+                  <div class="colourTab">
+                    <div>Colour:</div>
+                    <div class="colourBoxWrap clearfix">
+                      <label [ngStyle]="{'background-color': product.productInCart.productColour, 'border':'1px solid #cecece'}">{{product.productInCart.productColour}}</label>
+                    </div>
+                    <div class="itemSize" title="Selected Size" *ngIf="product.productInCart.productSize !=''">
+                      <div>Size:</div><span>{{product.productInCart.productSize | replaceUnderscore}}</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemDescriptionWrap clearfix" *ngIf="product.productInCart.productType == 'Gifts'">
+                  <h3>Product Description</h3>
+                  <p>Arthur Clive{{' '+ product.productInCart.productDesign + ' ' + product.productInCart.productType}}</p>
+                  <br>
+                  <p>For: {{product.productInCart.productFor}}</p>
+                </div>
+              </div>
+              <div class="itemPriceDetailsRight">
+                <div class="itemQTY">
+                  <h3>Qty</h3>
+                  <p>{{product?.productInCart.productQuantity}}</p>
+                </div>
+                <div class="itemUnitPice">
+                  <h3>Unit Price</h3>
+                  <i class="fa fa-inr"></i><span class="unitPrice">{{product?.productInCart.productPrice}}</span>
+                </div>
+                <div class="itemTotal">
+                  <h3>Item Total</h3>
+                  <i class="fa fa-inr"></i><span class="unitPrice">{{product?.productInCart.productPrice * product?.productInCart.productQuantity}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="orderSummeryOuter clearfix">
+            <div class="orderSummeryWrap">
+              <h4>Order Summary</h4>
+              <table class="orderSummery" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>Item(s) Subtotal</td>
+                  <td> <i class="fa fa-inr"></i><span class="unitPrice">{{orderItem?.totalAmount - orderItem?.estimatedTax}}</span></td>
+                </tr>
+                <tr>
+                  <td>Shipping</td>
+                  <td>Free</td>
+                </tr>
+                <tr>
+                  <td>Total</td>
+                  <td><i class="fa fa-inr"></i><span class="unitPrice">{{orderItem?.totalAmount - orderItem?.estimatedTax}}</span></td>
+                </tr>
+                <tr>
+                  <td>GST@5%</td>
+                  <td><i class="fa fa-inr"></i><span class="unitPrice">{{orderItem?.estimatedTax}}</span></td>
+                </tr>
+                <tr>
+                  <td>Discount Applied</td>
+                  <td><i class="fa fa-inr"></i><span class="unitPrice">{{orderItem?.couponDiscount}}</span></td>
+                </tr>
+                <tr>
+                  <td>Grand Total</td>
+                  <td><i class="fa fa-inr"></i><span class="unitPrice">{{orderItem?.totalAmount}}</span></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="orderDetailsRegisterAddress">
+            <p><strong>Registered Address:</strong> Arthur Clive . 2nd Floor . 2/54 Azadgarh . Kolkata . PIN 700040 . India</p>
+            <p>
+              <span><strong>Call:</strong><a href="tel:09433978080" class="telePhoneNumber">+91 9433978080</a></span>
+              <span><strong>Email:</strong> <a href="mailto:sales@artwear.in" target="_parent">sales@artwear.in</a></span>
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- End  HTML Here -->
+
+    </div>
+    <div id="printSection" hidden>
+      <table width="1000" cellspacing="0" cellpadding="0" border="0" align="center">
+        <tr>
+          <td align="center" valign="top" style="padding:20px 0; border-bottom:1px solid #000;">
+            <table width="245" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td align="center" valign="top"><img src="assets/img/order-logo.png" alt=""></td>
+              </tr>
+              <tr>
+                <td align="center" valign="top" style="padding:5px 0; font:normal 16px/1.5 Verdana, Arial,Helvetica,sans-serif;">GST : 19ABGFA7624P1ZU</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" style="padding:20px 0; font:normal 14px/1.5 Verdana, Arial,Helvetica,sans-serif;">
+            <table width="1000" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td align="left" valign="top" style="padding:0 0 0 5px;">
+                  <table width="300" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                      <td align="left" valign="top" style="padding:0 0 15px 0;"><strong>Billing Address</strong></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" style="line-height:1.7;">
+                        {{billingAddress?.addressLines}}<br> {{billingAddress?.city}}
+                        <br> {{billingAddress?.state}}
+                        <br> {{billingAddress?.pinCode}}
+                        <br> {{billingAddress?.country}}
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td align="left" valign="top">
+                  <table width="300" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                      <td align="left" valign="top" style="padding:0 0 15px 0;"><strong>Delivery Address</strong></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" style="line-height:1.7;">
+                        {{shippingAddress?.addressLines}}<br> {{shippingAddress?.city}}
+                        <br> {{shippingAddress?.state}}
+                        <br> {{shippingAddress?.pinCode}}
+                        <br> {{shippingAddress?.country}}
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td align="right" valign="top">
+                  <table width="400" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                      <td align="right" valign="top" style="padding:0 5px 10px 0;"><strong>Invoice Details</strong></td>
+                    </tr>
+                    <tr>
+                      <td align="right" valign="top">
+                        <table width="400" cellspacing="0" cellpadding="5" border="0">
+                          <tr>
+                            <td align="right" valign="top">Invoice Number : <strong>{{orderItem?.orderId}}</strong></td>
+                          </tr>
+                          <tr>
+                            <td align="right" valign="top">Order Number : <strong>ACODR-{{orderItem?.orderId}}</strong></td>
+                          </tr>
+                          <tr>
+                            <td align="right" valign="top">Order Date : <strong>{{orderItem.id?.creationTime.substring(8,10) + '-' + orderItem.id?.creationTime.substring(5,7) + '-' + orderItem.id?.creationTime.substring(0,4) }}</strong></td>
+                          </tr>
+                          <tr>
+                            <td align="right" valign="top">Payment Method : <strong>{{orderItem?.paymentMethod}}</strong></td>
+                          </tr>
+                          <tr>
+                            <td align="right" valign="top">Shipping : <strong>Free</strong></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" valign="top" style="font:normal 14px/1.5 Verdana, Arial,Helvetica,sans-serif; border-top:1px solid #000; padding:0 0 0">
+            <table width="1000" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td align="center" valign="top" style="padding:15px 0; border-bottom:1px solid #000;">
+                  <table width="1000" cellspacing="0" cellpadding="5" border="0">
+                    <div class="productDetails" *ngFor="let product of orderItem.productDetails">
+                      <tr>
+                        <th width="400" align="left" valign="top">Product Description</th>
+                        <th width="200" align="center" valign="top">Qty</th>
+                        <th width="200" align="center" valign="top">Unit Price</th>
+                        <th width="200" align="right" valign="top">Item Total</th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top" *ngIf="product.productInCart.productType != 'Gifts'">
+                          {{product.productInCart.productFor +' '+ product.productInCart.productType + ' ' + product.productInCart.productDesign}}
+                          <br> Colour : {{product?.productInCart.productColour}}
+                          <br> Size : {{product?.productInCart.productSize | replaceUnderscore}}
+                        </td>
+                        <td align="left" valign="top" *ngIf="product.productInCart.productType == 'Gifts'">
+                          <p>Arthur Clive {{' ' + product.productInCart.productDesign +' '+ product.productInCart.productType}}</p>
+                          <br>
+                          <p>For: {{product.productInCart.productFor}}</p>
+                        </td>
+                        <td align="center" valign="middle">{{product?.productInCart.productQuantity}}</td>
+                        <td align="center" valign="middle"><i class="fa fa-inr"></i><span class="unitPrice">{{product?.productInCart.productPrice}}</span></td>
+                        <td align="right" valign="middle"><i class="fa fa-inr"></i><span class="unitPrice">{{product?.productInCart.productPrice * product?.productInCart.productQuantity}}</span></td>
+                      </tr>
+                    </div>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align="right" valign="top" style="font:normal 14px/1.5 Verdana, Arial,Helvetica,sans-serif; padding:25px 0;">
+            <table width="350" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <th align="left" valign="top" style="font-size:16px; padding:0 0 15px 5px;">Order Summary</th>
+              </tr>
+              <tr>
+                <td align="center" valign="top">
+                  <table width="100%" cellpadding="5" cellspacing="0">
+                    <tr>
+                      <td align="left" valign="top">Item(s) Subtotal</td>
+                      <td align="right" valign="top">
+                        <i class="fa fa-inr"></i><span class="unitPrice">{{orderItem?.totalAmount - orderItem?.estimatedTax}}</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">Shipping</td>
+                      <td align="right" valign="top">Free</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">Total</td>
+                      <td align="right" valign="top">
+                        <i class="fa fa-inr"></i><span class="unitPrice">{{orderItem?.totalAmount - orderItem?.estimatedTax}}</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">GST@5%</td>
+                      <td align="right" valign="top">
+                        <i class="fa fa-inr"></i><span class="unitPrice">{{orderItem?.estimatedTax}}</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">Discount Applied</td>
+                      <td align="right" valign="top">
+                        <i class="fa fa-inr"></i><span class="unitPrice">{{orderItem?.couponDiscount}}</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top"><strong>Grand Total</strong></td>
+                      <td align="right" valign="top"><strong>
+                        <i class="fa fa-inr"></i><span class="unitPrice">{{orderItem?.totalAmount}}</span>
+                        </strong></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" valign="top" style="font:normal 12px/1.5 Verdana, Arial,Helvetica,sans-serif; border-top:1px solid #000; padding:20px 0 0 0;">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td align="center" valign="top">
+                  <strong>Registered Address:</strong> Arthur Clive . 2nd Floor . 2/54 Azadgarh . Kolkata . PIN 700040 .
+                  India
+                </td>
+              </tr>
+              <tr>
+                <td align="center" valign="top">
+                  <span><strong>Call:</strong>+91 9433978080</span>
+                  <span><strong>Email:</strong>sales@artwear.in</span>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

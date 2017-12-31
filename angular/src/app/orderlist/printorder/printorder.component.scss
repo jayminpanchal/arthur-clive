@@ -1,0 +1,358 @@
+.productDetails {
+  padding: 15px 0;
+  border-bottom: 2px solid #000;
+}
+
+.orderDetailsWrapOuter {
+  position: relative;
+  padding: 50px 0 30px;
+}
+
+.orderDetailsWrapOuter .printThisPageBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8px 15px;
+  font-size: 11px;
+  font-size: 0.6875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  outline: none;
+}
+
+@media (max-width: 37.4375em) {
+  .orderDetailsWrapOuter .printThisPageBtn {
+    right: 15px;
+  }
+}
+
+.orderDetailsWrapOuter .printThisPageBtn span {
+  font-size: 16px;
+  font-size: 1rem;
+  margin-left: 5px;
+  margin-top: -2px;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap {
+  position: relative;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .logoGSTNumberWrap {
+  position: relative;
+  margin: 0 auto 30px 0;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #aaaaaa;
+  text-align: center;
+}
+
+@media (max-width: 37.4375em) {
+  .orderDetailsWrapOuter .orderDetailsWrap .logoGSTNumberWrap {
+    margin-bottom: 20px;
+  }
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .logoGSTNumberWrap .oderDetailsLogo {
+  max-width: 245px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .logoGSTNumberWrap .GSTNumber {
+  text-align: center;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2a2c2e;
+  padding: 10px 0;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderDetailsAddressWrap {
+  position: relative;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #aaaaaa;
+}
+
+@media (max-width: 37.4375em) {
+  .orderDetailsWrapOuter .orderDetailsWrap .orderDetailsAddressWrap {
+    padding-bottom: 20px;
+  }
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderDetailsAddressWrap h2 {
+  font-size: 16px;
+  font-size: 1rem;
+  color: #2a2c2e;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderDetailsAddressWrap .InvoiceTab {
+  position: relative;
+  width: 33.33333333333333%;
+  float: right;
+  font-size: 16px;
+  font-size: 1rem;
+  text-align: right;
+  color: #2a2c2e;
+}
+
+@media (max-width: 47.9375em) {
+  .orderDetailsWrapOuter .orderDetailsWrap .orderDetailsAddressWrap .InvoiceTab {
+    width: 100%;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #aaa;
+    text-align: center;
+  }
+}
+
+@media (max-width: 37.4375em) {
+  .orderDetailsWrapOuter .orderDetailsWrap .orderDetailsAddressWrap .InvoiceTab {
+    float: none;
+    padding: 0 15px 20px 15px;
+    margin-bottom: 20px;
+  }
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderDetailsAddressWrap .InvoiceTab p {
+  padding-bottom: 5px;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderDetailsAddressWrap .odrDtlsBillingAddress {
+  width: 33.33333333333333%;
+  float: left;
+  padding-right: 10px;
+}
+
+@media (max-width: 47.9375em) {
+  .orderDetailsWrapOuter .orderDetailsWrap .orderDetailsAddressWrap .odrDtlsBillingAddress {
+    width: 50%;
+  }
+}
+
+@media (max-width: 37.4375em) {
+  .orderDetailsWrapOuter .orderDetailsWrap .orderDetailsAddressWrap .odrDtlsBillingAddress {
+    width: auto;
+    float: none;
+    padding: 0 15px 20px;
+    border-bottom: 1px solid #aaa;
+    text-align: center;
+  }
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderDetailsAddressWrap .odrDtlsDeliveryAddress {
+  width: 33.33333333333333%;
+  float: left;
+  padding-right: 10px;
+}
+
+@media (max-width: 47.9375em) {
+  .orderDetailsWrapOuter .orderDetailsWrap .orderDetailsAddressWrap .odrDtlsDeliveryAddress {
+    width: 50%;
+  }
+}
+
+@media (max-width: 37.4375em) {
+  .orderDetailsWrapOuter .orderDetailsWrap .orderDetailsAddressWrap .odrDtlsDeliveryAddress {
+    width: auto;
+    float: none;
+    padding: 20px 15px 0;
+    text-align: center;
+  }
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter {
+  position: relative;
+  padding: 0 0;
+  border-bottom: 2px solid #aaaaaa;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain {
+  position: relative;
+  padding: 25px 0;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+@media (max-width: 37.4375em) {
+  .orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain {
+    padding: 20px 15px;
+  }
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain:last-of-type {
+  border-bottom: none;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain h3 {
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #2a2c2e;
+  padding-bottom: 15px;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain .itemImageNameDetailsLeft {
+  position: relative;
+  width: 60%;
+  float: left;
+}
+
+@media (max-width: 37.4375em) {
+  .orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain .itemImageNameDetailsLeft {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain .itemImageNameDetailsLeft .itemImageWrap {
+  width: 30%;
+  float: left;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain .itemImageNameDetailsLeft .itemDescriptionWrap {
+  width: 70%;
+  float: left;
+  padding: 0 10px;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain .itemImageNameDetailsLeft .itemDescriptionWrap p {
+  padding-bottom: 3px;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain .itemPriceDetailsRight {
+  position: relative;
+  width: 40%;
+  float: left;
+}
+
+@media (max-width: 37.4375em) {
+  .orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain .itemPriceDetailsRight {
+    width: 100%;
+  }
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain .itemPriceDetailsRight .itemQTY {
+  width: 30%;
+  float: left;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain .itemPriceDetailsRight .itemQTY p {
+  padding-left: 2px;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain .itemPriceDetailsRight .itemUnitPice {
+  width: 30%;
+  float: left;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain .itemPriceDetailsRight .itemUnitPice p {
+  padding-left: 2px;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain .itemPriceDetailsRight .itemTotal {
+  width: 40%;
+  float: left;
+  text-align: right;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .itemDescriptionOuter .itemDescWrapMain .itemPriceDetailsRight .itemTotal p {
+  padding-right: 2px;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderSummeryOuter {
+  position: relative;
+  padding: 30px 0;
+  border-bottom: 2px solid #aaaaaa;
+}
+
+@media (max-width: 37.4375em) {
+  .orderDetailsWrapOuter .orderDetailsWrap .orderSummeryOuter {
+    padding: 20px 15px;
+  }
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderSummeryOuter .orderSummeryWrap {
+  max-width: 350px;
+  width: 100%;
+  float: right;
+}
+
+@media (max-width: 37.4375em) {
+  .orderDetailsWrapOuter .orderDetailsWrap .orderSummeryOuter .orderSummeryWrap {
+    max-width: 100%;
+    float: none;
+  }
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderSummeryOuter .orderSummeryWrap h4 {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2a2c2e;
+  padding-bottom: 15px;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderSummeryOuter .orderSummeryWrap table.orderSummery {
+  width: 100%;
+  border: 0;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderSummeryOuter .orderSummeryWrap table.orderSummery tr:last-of-type td {
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 17px;
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderSummeryOuter .orderSummeryWrap table.orderSummery td {
+  font-size: 16px;
+  font-size: 1rem;
+  padding: 5px 1px;
+  text-align: left;
+  color: #2a2c2e;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderSummeryOuter .orderSummeryWrap table.orderSummery td:nth-of-type(2) {
+  text-align: right;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderDetailsRegisterAddress {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #2a2c2e;
+  text-align: center;
+}
+
+@media (max-width: 47.9375em) {
+  .orderDetailsWrapOuter .orderDetailsWrap .orderDetailsRegisterAddress span {
+    display: block;
+  }
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderDetailsRegisterAddress p {
+  padding-bottom: 3px;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderDetailsRegisterAddress p:last-of-type {
+  padding-bottom: 0;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderDetailsRegisterAddress a {
+  color: #2a2c2e;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderDetailsRegisterAddress a:hover {
+  border-bottom: 1px solid #2a2c2e;
+}
+
+.orderDetailsWrapOuter .orderDetailsWrap .orderDetailsRegisterAddress a.telePhoneNumber {
+  border-bottom: none !important;
+}

@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/bootstrap";
+@import "spinner";
+@import "utils";
+@import "rtl";
+@import "responsive";
+@import 'node_modules/angular2-toaster/toaster';
+
+
+.table-caption{
+    border: solid 1px #ececec;
+    padding:10px 0;
+    background-color:#f7f7f9;
+}
+
+.table-row{
+    border-bottom: solid 1px #ececec;
+    padding:10px 0;
+    vertical-align: middle;
+}
+
+.customrow{
+    background-color:#ececec;
+}

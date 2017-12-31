@@ -1,0 +1,16 @@
+<div class="table-row row">
+  <span class="col-sm-1">{{order?.itemIndex + 1 }}</span>
+  <span class="col-sm-2">{{'ACODR-' + order.orderItem?.orderId}}</span>
+  <span class="col-sm-2">{{order.orderItem?.userName}}</span>
+  <span class="col-sm-2">{{order.orderItem?.totalAmount}}</span>
+  <span class="col-sm-2">{{order.orderItem?.paymentDetails.status[order.orderItem?.paymentDetails.status.length-1].description}}</span>
+  <span class="col-sm-2">{{order.orderItem?.orderStatus}}</span>
+  <span class="col-sm-1">
+    <button _ngcontent-c9="" class="btn btn-primary" type="button" (click)="updateClicked()">View</button>
+  </span>
+
+</div>
+
+  <div class="row" *ngIf="showUpdate">
+    <app-orderitem-insert-update [order]="order" class="col-sm-12" (saveButtonClicked)="saveClicked($event)" (cancelButtonClicked)="cancelClicked($event)"></app-orderitem-insert-update>
+  </div>

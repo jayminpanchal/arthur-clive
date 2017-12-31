@@ -1,0 +1,14 @@
+<div class="table-row row">
+  <span class="col-sm-2">{{user?.itemIndex + 1 }}</span>
+  <span class="col-sm-3">{{user.userInfo.fullName}}</span>
+  <span class="col-sm-2">{{user.userInfo.phoneNumber}}</span>
+  <span class="col-sm-3">{{user.userInfo.email}}</span>
+  <span class="col-sm-2">
+    <button _ngcontent-c9="" class="btn btn-primary" type="button" (click)="updateClicked()">View</button>
+  </span>
+</div>
+<div class="customrow row">
+  <div class="col-sm-12" *ngIf="showUpdate">
+    <app-viewuser [user]="user" (saveButtonClicked)="saveClicked($event)" (cancelButtonClicked)="cancelClicked($event)"></app-viewuser>
+  </div>
+</div>

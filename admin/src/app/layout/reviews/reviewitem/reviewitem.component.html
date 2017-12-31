@@ -1,0 +1,11 @@
+<div class="table-row row">
+  <span class="col-sm-1">{{rowNumber}}</span>
+  <span class="col-sm-3">{{productSKU}}</span>
+  <span class="col-sm-2">{{reviewItem.name}}</span>
+  <span class="col-sm-2">{{reviewItem.rating}}</span>
+  <span class="col-sm-2">{{reviewItem.comment}}</span>
+  <span class="col-sm-2">
+    <button *ngIf="!reviewItem.approved" class="btn btn-primary" type="button" (click)="approveClicked()">Approve</button>
+    <button *ngIf="reviewItem.approved" class="btn btn-primary" type="button" (click)="revokeClicked()">Revoke</button>
+  </span>
+</div>

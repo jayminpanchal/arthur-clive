@@ -1,0 +1,51 @@
+.emptyShoppingBagWishlistWrap {
+  position: relative;
+  padding: 20px 20px;
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.26);
+          box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.26);
+  text-align: center;
+  min-height: 235px;
+}
+
+.emptyShoppingBagWishlistWrap .emptyShoppingBagWishlist {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 50px 0 0 0;
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: #2a2c2e;
+}
+
+.emptyShoppingBagWishlistWrap .emptyShoppingBagWishlist p {
+  padding-bottom: 15px;
+}
+
+.emptyShoppingBagWishlistWrap .emptyShoppingBagWishlist button {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 195px;
+  padding: 0;
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-family: 'Roboto';
+  color: #fff;
+  text-transform: uppercase;
+  display: block;
+  background: black;
+  padding: 10px 15px;
+  -webkit-box-shadow: inset 0 0 0 0 #fc7700;
+          box-shadow: inset 0 0 0 0 #fc7700;
+  -webkit-transition: all ease 0.8s;
+  transition: all ease 0.8s;
+  border: 0;
+  outline: none;
+}
+
+.emptyShoppingBagWishlistWrap .emptyShoppingBagWishlist button:hover {
+  -webkit-box-shadow: inset 0 312px 0 0 #fc7700;
+          box-shadow: inset 0 312px 0 0 #fc7700;
+  color: #fff;
+}

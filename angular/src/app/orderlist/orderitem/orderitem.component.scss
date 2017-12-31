@@ -1,0 +1,28 @@
+.ordersMainWrap .ordersWrapRow1 .downArrow {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  height: 20px;
+  overflow: hidden;
+  text-align: center;
+  background: #d2d2d2;
+}
+
+.ordersMainWrap .ordersWrapRow1 .downDown span:before {
+  font-family: 'fontawesome';
+  content: '\f107';
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: #000;
+  line-height: 1;
+}
+
+.ordersMainWrap .ordersWrapRow1 .downUp span:before {
+  font-family: 'fontawesome';
+  content: '\f106';
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: #000;
+  line-height: 1;
+}

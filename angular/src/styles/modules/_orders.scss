@@ -1,0 +1,315 @@
+@import 'mixin';
+
+.ordersOuterWrap{
+	position: relative;
+}
+.ordersMainWrap{
+	position: relative;
+	margin-bottom: 30px;
+	border:1px solid #cecece;
+
+	.ordersWrapRow1{
+		position: relative;
+		background: rgba(#cecece, 0.2);
+		padding: 20px 20px 30px;
+		border-bottom: 1px solid #cecece;
+
+		@include MQ(767) {
+			padding: 15px 20px 30px;
+		}
+		@include MQ(479) {
+			padding: 15px 20px 60px;
+		}
+
+		.ordersWrapRow1Heading{
+			@include font-size(14px);
+			text-transform: uppercase;
+			color: #2a2c2e;
+			font-weight: 700;
+			display: block;
+			padding-bottom: 5px;
+
+			@include MQ(479) {
+				@include font-size(13px);
+				padding-bottom: 2px;
+			}
+		}
+		.ordersWrapRow1Desc{
+			@include font-size(16px);
+			color: #2a2c2e;
+			display: block;
+
+			@include MQ(1023) {
+				@include font-size(14px);
+			}
+		}
+
+		.orderNumberBtnWrap{
+			width: 40%;
+			float: left;
+
+			@include MQ(767) {
+				width: 70%;
+				padding-bottom: 15px;
+			}
+			@include MQ(479) {
+				width: 60%;
+				padding-bottom: 10px;
+			}
+
+			.orderNumberBtnInner{
+				padding-top: 4px;
+
+				.orderNumber{
+					float: left;
+					@include font-size(16px);
+					line-height: 1;
+					text-transform: uppercase;
+					color: #2a2c2e;
+					padding-right: 15px;
+					margin-right: 15px;
+					border-right: 1px solid #999;
+
+					@include MQ(1023) {
+						@include font-size(14px);
+					}
+
+					@include MQ(479) {
+						padding-left: 0;
+						margin-right: 0;
+						border-right: 1px solid transparent;
+					}
+				}
+
+				a.orderDetailsAnchor{
+					position: relative;
+					float: left;
+					@include font-size(16px);
+					line-height: 1;
+					text-decoration: none;
+					color: #2a2c2e;
+					padding: 0 0 1px;
+					text-decoration: none;
+					border-bottom: 1px solid #c1c1c1;
+					
+					@include MQ(1023) {
+						@include font-size(14px);
+					}
+					@include MQ(479) {
+						position: absolute;
+						bottom: 30px;
+						left: 20px;
+						background: rgba(#000, 1);
+						padding: 7px 10px;
+						@include font-size(11px);
+						color: #fff;
+						text-transform: uppercase;
+
+					}
+
+					&:hover{
+					 	border-bottom: 1px solid #000;
+					}
+				}
+			}
+		}
+
+		.orderPlaced{
+			width: 20%;
+			float: left;
+			padding-right: 5px;
+
+			@include MQ(767) {
+				width: 30%;
+				padding-bottom: 15px;
+			}
+
+			@include MQ(479) {
+				width: 40%;
+				padding: 0 0 10px;
+			}
+		}
+		.orderTotal{
+			width: 10%;
+			float: left;
+			padding-right: 5px;
+
+			@include MQ(767) {
+				width: 70%;
+			}
+			@include MQ(479) {
+				width: 60%;
+				padding: 0 0 10px;
+			}
+		}
+		.orderStatus{
+			width: 12%;
+			float: left;
+			padding-right: 5px;
+
+			@include MQ(767) {
+				width: 30%;
+			}
+			@include MQ(479) {
+				width: 40%;
+				padding: 0;
+			}
+		}
+	}
+
+	.ordersWrapRow2{
+		position: relative;
+
+		.orderItemRow{
+			padding: 30px 20px;
+			border-bottom: 1px solid #cecece;
+			@include font-size(16px);
+
+			&:last-of-type{
+				border-bottom: none;
+			}
+
+			.orderItemRowLeft{
+				width: 60%;
+				float: left;
+
+				@include MQ(767) {
+					width: 100%;
+					margin-bottom: 20px;
+				}
+
+				.itemImage{
+					width: 24%;
+					float: left;
+					text-align: center !important;
+
+					// a{
+					// 	width: 100px;
+					// 	display: block;
+					// }
+
+					@include MQ(479) {
+						width: 35%;
+					}
+				}
+				.itemDescWrap{
+					width: 76%;
+					float: left;
+					padding: 20px;
+
+					@include MQ(1279) {
+						padding: 0 20px;
+					}
+					@include MQ(479) {
+						width: 65%;
+						padding: 0 0 0 10px;
+					}
+
+					.itemColour{
+						font-size: 14px;
+						padding: 12px 0;
+
+						@include MQ(1279) {
+							padding: 10px 0;
+						}
+					}
+
+					.itemSize{
+						position: relative;
+						span{
+							display: block;
+							width: 40px;
+							height: 40px;
+							padding-top: 10px;
+							border-radius: 50%;
+							background: rgba(252, 119, 0, 1.0);
+							@include font-size(14px);
+							// font-weight: bold;
+							color: #fff;
+							text-align: center;
+
+							@include MQ(767) {
+								width: 30px;
+								height: 30px;
+								@include font-size(12px);
+								padding-top: 7px;
+							}
+						}
+					}
+				}
+			}
+			.orderItemRowRight{
+				width: 40%;
+				float: right;
+
+				@include MQ(767) {
+					width: 100%;
+				}
+
+				.itemUnitPriceAndQty{
+					position: relative;
+					width: 50%;
+					float: left;
+					padding-top: 20px;
+
+					@include MQ(1279) {
+						padding: 0;
+					}
+					@include MQ(767) {
+						width: 24%;
+						text-align: center;
+						padding-top: 3px;
+					}
+					@include MQ(479) {
+						width: 35%;
+					}
+				}
+				.buyItAgainBtnWrap{
+					width: 50%;
+					float: left;
+					padding-top: 20px;
+
+					@include MQ(1279) {
+						padding: 0;
+					}
+					@include MQ(767) {
+						width: 76%;
+						padding: 0 20px;
+					}
+					@include MQ(479) {
+						width: 65%;
+						padding: 0 0 0 10px;
+					}
+
+					.buyItAgainBtn{
+						position: relative;
+						// width: 100%;
+						max-width: 150px;
+						width: 100%;
+						border: 0;
+						outline: 0;
+						text-align: center;
+						@include font-size(12px);
+						font-family: 'Roboto';
+						color: #fff;
+						text-transform: uppercase;
+						display: block;
+						background: rgba(#000, 1);
+						padding: 7px 8px;
+
+						span{
+							@include font-size(14px);
+							margin-left: 5px;
+							color: rgba(252, 119, 0, 1.0);
+
+							// @include MQ(479) {
+							// 	display: block;
+							// 	margin: 0 0 3px 0;
+							// }
+						}
+					}
+				}
+			}
+		}
+	}
+}

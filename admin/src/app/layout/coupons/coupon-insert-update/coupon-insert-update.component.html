@@ -1,0 +1,50 @@
+<br/>
+<div>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+      <label for="code">Coupon Code</label>
+      <input type="text" name="code" class="form-control"
+       [ngModel]="coupon.code" required>
+      <label *ngIf="f.controls.code?.errors && f.controls.code.touched"
+       class="form-control-label" for="inputError">Field required.</label>
+    </div>
+    <div class="form-group">
+      <label for="applicableFor">Applicable For</label>
+      <input type="text" name="applicableFor" class="form-control"
+       [ngModel]="coupon.applicableFor" required>
+      <label *ngIf="f.controls.applicableFor?.errors && f.controls.applicableFor.touched"
+       class="form-control-label" for="inputError">Field required.</label>
+    </div>
+    <div class="form-group">
+      <label for="expiryTime">Expiry Time</label>
+      <input type="date" name="expiryTime" class="form-control"      
+       [ngModel]="coupon.expiryTime | date:'yyyy-MM-dd'" required>
+      <label *ngIf="f.controls.expiryTime?.errors && f.controls.expiryTime.touched"
+       class="form-control-label" for="expiryTime">Field required.</label>
+    </div>
+    <div class="form-group">
+      <label for="usageCount">Usage Count</label>
+      <input type="text" name="usageCount" class="form-control"
+       [ngModel]="coupon.usageCount" required>
+      <label *ngIf="f.controls.usageCount?.errors && f.controls.usageCount.touched"
+       class="form-control-label" for="usageCount">Field required.</label>
+    </div>
+    <div class="form-group">
+      <label for="value">Value</label>
+      <input type="text" name="value" class="form-control"
+       [ngModel]="coupon.value" required>
+      <label *ngIf="f.controls.value?.errors && f.controls.value.touched"
+       class="form-control-label" for="value">Field required.</label>
+    </div>
+    <div class="form-group">
+          <label for="value">Percentage?</label>
+          <select class="form-control" name="percentage" [(ngModel)]="coupon.percentage">
+            <option [ngValue]="true">True</option>
+            <option [ngValue]="false">False</option>
+          </select>
+    </div>
+    <button _ngcontent-c9="" [disabled]="!f.valid" class="btn btn-primary" type="submit">Save</button>
+    <button _ngcontent-c9="" class="btn btn-danger" type="button" (click)="cancelClicked()">Cancel</button>
+  </form>        
+</div>
+<br/>

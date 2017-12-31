@@ -1,0 +1,46 @@
+<div class="orderItemRowLeft">
+    <div class="itemImage"><a href=""><img [lazyLoad]="product.productInCart.minioObject_URL" alt=""></a></div>
+    <div class="itemDescWrap" *ngIf="product.productInCart.productType != 'Gifts'">
+        <div class="itemHeading"><a href="">Arthur Clive {{product.productInCart.productFor +' '+ product.productInCart.productType + ' ' + product.productInCart.productDesign}} </a></div>
+        <div class="colourTab">
+            <div>Colour:</div>
+            <div class="colourBoxWrap clearfix">
+                <label [ngStyle]="{'background-color': product.productInCart.productColour, 'border':'1px solid #cecece'}">{{product.productInCart.productColour}}</label>
+            </div>
+            <div class="itemSize" title="Selected Size" *ngIf="product.productInCart.productSize !=''">
+                <div>Size:</div><span>{{product.productInCart.productSize | replaceUnderscore}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="itemDescWrap" *ngIf="product.productInCart.productType == 'Gifts'">
+        <div class="itemHeading"><a href="">Arthur Clive {{' '+ product.productInCart.productDesign + ' ' + product.productInCart.productType}} </a></div>
+        <br>
+        <span>For:{{product.productInCart.productFor}}</span>
+    </div>
+
+</div>
+<div class="orderItemRowRight">
+    <div class="itemUnitPriceAndQty">
+        <i class="fa fa-inr"></i><span class="unitPrice">{{product.productInCart.productPrice}}</span> x <span class="totalQty">{{product.productInCart.productQuantity}}</span>
+    </div>
+    <div class="buyItAgainBtnWrap">
+        <button class="buyItAgainBtn" (click)="buyAgain(product.productInCart)">Buy it again <span class="fa fa-shopping-bag"></span></button>
+    </div>
+    <div class="reviewSection" *ngIf="!product.reviewed">
+        <button class="reviewBtn" (click)="review()">Leave a Review<span class="fa fa-bullhorn"></span></button>
+        <div *ngIf="reviewOpened">
+            <br>
+            <star-rating-comp class="ratingstar" name="rating" [starType]="'svg'" [hoverEnabled]="true" [rating]="postReview.rating"
+                [staticColor]="'ok'" (onClick)="starClick($event)" [labelText]="'Rating'"></star-rating-comp>
+            <form (ngSubmit)="onSubmit(f, i)" #f="ngForm">
+                <textarea type="text" name="review" placeholder="Comments*" ngModel required></textarea>
+                <div class="error" *ngIf="f.controls.review?.errors && f.controls.review?.touched"><span class="error">Please enter your comments</span></div>
+                <input type="text" name="productSKU" [(ngModel)]="product.productInCart.productSKU" [hidden]="true">
+                <div class="reviewBtnWrap">
+                    <button class="submitcancelBtn" type="submit" [disabled]="!f.valid">Submit</button>
+                    <button class="submitcancelBtn" type="button" (click)="cancelReview()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

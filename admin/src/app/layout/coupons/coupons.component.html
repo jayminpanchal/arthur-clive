@@ -1,0 +1,37 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Coupons'" [icon]="'fa-table'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Add New Coupon
+                </div>
+                <div class="card-block table-responsive">
+                <button _ngcontent-c9="" class="btn btn-success" type="button" (click)="addClicked()">Add</button>
+                <div *ngIf="showAdd">
+                <app-coupon-insert-update (saveButtonClicked)="saveClicked($event)"  (cancelButtonClicked)="cancelClicked($event)"></app-coupon-insert-update>
+                </div>
+                </div>
+                <div class="card-header">
+                    Available Coupons
+                </div>
+                <div class="card-block table-responsive">
+                    <div class="table">
+                        <div class="table-caption row">
+                                <span class="col-sm-1">#</span>
+                                <span class="col-sm-2">Code</span>
+                                <span class="col-sm-2">Applicable For</span>
+                                <span class="col-sm-2">Expires By</span>
+                                <span class="col-sm-1">Value</span>
+                                <span class="col-sm-1">Usage Count</span>
+                                <span class="col-sm-1">Update</span>
+                                <span class="col-sm-1">Delete</span>
+                            </div>                         
+                            <div *ngFor="let coupon of coupons; let i=index" [app-couponitem]="{'couponItem': coupon, 'itemIndex': i}" (deletedItem)="itemDeleted($event)">
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

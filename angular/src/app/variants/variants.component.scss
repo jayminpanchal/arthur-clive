@@ -1,0 +1,50 @@
+@import '../../styles/modules/_mixin.scss';
+
+text{
+		// width: 80.7%;
+		width: calc(50% + 150px);
+		float: left;
+		margin-top: 5px;
+		resize: vertical;
+		min-height: 75px;
+		height: 75px;
+		@include font-size(14px);
+		font-family: 'Roboto';
+		color: #2a2c2e;
+		outline: none;
+		padding: 5px;
+		border: 1px solid #cecece;
+
+		@include MQ(862) {
+			width: 100%;
+		}
+	}
+	span.error{
+		@include font-size(12px);
+		text-align: right;
+		float: left;
+		width: calc(50% + 150px);
+		display: block;
+		padding: 3px 0;
+		color: #f00;
+
+		@include MQ(862) {
+			width: 100%;
+		}
+		@include MQ(767) {
+			text-align: center;
+		}
+	}
+
+    .rowSpacing {
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+input {
+    width: 80%;
+}
+textarea {
+    width: 70%;
+    height: 100px;
+}

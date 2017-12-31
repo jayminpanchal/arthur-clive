@@ -1,0 +1,34 @@
+<br/>
+<div>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+      <label for="productFor">Product For</label>
+      <input type="text" name="productFor" if="productFor" class="form-control"
+       [ngModel]="category.productFor" required>
+      <label *ngIf="f.controls.productFor?.errors && f.controls.productFor.touched"
+       class="form-control-label" for="inputError">Field required.</label>
+    </div>
+    <div class="form-group">
+      <label for="productType">Product Type</label>
+      <input type="text" name="productType" class="form-control"
+       [ngModel]="category.productType" required>
+      <label *ngIf="f.controls.productType?.errors && f.controls.productType.touched"
+       class="form-control-label" for="inputError">Field required.</label>
+    </div>
+      <label for="description">Description</label>
+      <textarea type="text" name="description" class="form-control"
+       [ngModel]="category.description" required></textarea>
+      <label *ngIf="f.controls.description?.errors && f.controls.description.touched"
+       class="form-control-label" for="inputError">Field required.</label>
+    <div class="form-group">
+      <label for="minioObject_URL">Image Url: {{category.minioObject_URL}}</label>
+      <image-upload url="https://artwear.in:5003/api/admin/uploadimage" [beforeUpload]="onBeforeUpload(f)" (uploadFinished)="onUploadFinished($event)">
+      </image-upload>
+      <input type="text" name="minioObject_URL" class="form-control"
+       [ngModel]="category.minioObject_URL" hidden required>
+    </div>
+    <button _ngcontent-c9="" [disabled]="!f.valid" class="btn btn-primary" type="submit">Save</button>
+    <button _ngcontent-c9="" class="btn btn-danger" type="button" (click)="cancelClicked()">Cancel</button>
+  </form>        
+</div>
+<br/>
